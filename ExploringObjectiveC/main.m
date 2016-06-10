@@ -10,8 +10,51 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
+        
+        //In Objective-C, strings begin with @ symbol
         NSLog(@"Hello, World!");
+        
+        //arc4random() generates a random number
+        //we make use of modulo operator to generate random number between 1 and 100
+        int no = arc4random() % 100 + 1;
+        
+        //format specifier for int is %i,
+        //for float is %f
+        //for char is %c
+        //There isn't a specific format specifier for BOOL values; print %i of BOOL values gives 1 for YES and 0 for FALSE
+        //BOOL values in Objective-c stores a YES or NO value
+        NSLog(@"Integer with value %i, Float with value %f, Char with value %c, Boolean value for YES is represented as %i",
+                                    no, 22.5, 'y', YES);
+        
+        int userInput;
+        NSLog(@"Enter a number: ");
+        //scanf is used to accept input from user
+        scanf("%i", &userInput);
+        //NSLog(@"User entered the number %i",userInput);
+        
+        //name is pointer to a NSString object
+        //name is an instance of NSString Object
+        //A pointer just stores the memory location of the object and not the object itself
+        NSString *name = @"Devesh";
+        //%@ is a format specifier for references
+        NSLog(@"Hello %@",name);
+        //[] means we are are sending a message to an object
+        //sending a message to an object or calling a method on an object mean the same
+        NSString *outputString = [NSString stringWithFormat:@"You have entered the value : %i",userInput];
+        NSLog(@"%@",outputString);
+        
+        char charString[40];
+        NSLog(@"Enter a word:");
+        //To accept an array of character we use the format specifier %s
+        //we don't make use of & to accept input
+        scanf("%s",charString);
+        //A simple list of characters is known as C String
+        //convert the C String into a NSString
+        NSString *userEnteredCharacterString = [NSString stringWithCString:charString encoding:1];
+        //%li format specifier for NSUInteger
+        //NSString also stores a C string, but also provides a host of methods that allow you to do things such as get the string’s length and compare it to other strings.
+        NSLog(@"User has entered the word: %@  of length: %li ",userEnteredCharacterString, [userEnteredCharacterString length]);
+        
     }
     return 0;
 }
