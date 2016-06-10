@@ -8,7 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		600E471C1D0A2DED006CAE3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 600E471B1D0A2DED006CAE3E /* main.m */; };
+		600E47241D0AC3B9006CAE3E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 600E47231D0AC3B9006CAE3E /* Person.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		600E47531D0AD028006CAE3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 600E474F1D0AD028006CAE3E /* Tap Me.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 600E47351D0AD028006CAE3E;
+			remoteInfo = "Tap Me";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		600E47161D0A2DED006CAE3E /* CopyFiles */ = {
@@ -25,6 +36,9 @@
 /* Begin PBXFileReference section */
 		600E47181D0A2DED006CAE3E /* ExploringObjectiveC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ExploringObjectiveC; sourceTree = BUILT_PRODUCTS_DIR; };
 		600E471B1D0A2DED006CAE3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		600E47221D0AC3B9006CAE3E /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		600E47231D0AC3B9006CAE3E /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		600E474F1D0AD028006CAE3E /* Tap Me.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Tap Me.xcodeproj"; path = "Tap Me/Tap Me.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +55,7 @@
 		600E470F1D0A2DED006CAE3E = {
 			isa = PBXGroup;
 			children = (
+				600E474F1D0AD028006CAE3E /* Tap Me.xcodeproj */,
 				600E471A1D0A2DED006CAE3E /* ExploringObjectiveC */,
 				600E47191D0A2DED006CAE3E /* Products */,
 			);
@@ -57,9 +72,27 @@
 		600E471A1D0A2DED006CAE3E /* ExploringObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
+				600E472B1D0ACAA3006CAE3E /* CustomClasses */,
 				600E471B1D0A2DED006CAE3E /* main.m */,
 			);
 			path = ExploringObjectiveC;
+			sourceTree = "<group>";
+		};
+		600E472B1D0ACAA3006CAE3E /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				600E47221D0AC3B9006CAE3E /* Person.h */,
+				600E47231D0AC3B9006CAE3E /* Person.m */,
+			);
+			name = CustomClasses;
+			sourceTree = "<group>";
+		};
+		600E47501D0AD028006CAE3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				600E47541D0AD028006CAE3E /* Tap Me.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +139,12 @@
 			mainGroup = 600E470F1D0A2DED006CAE3E;
 			productRefGroup = 600E47191D0A2DED006CAE3E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 600E47501D0AD028006CAE3E /* Products */;
+					ProjectRef = 600E474F1D0AD028006CAE3E /* Tap Me.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				600E47171D0A2DED006CAE3E /* ExploringObjectiveC */,
@@ -113,11 +152,22 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		600E47541D0AD028006CAE3E /* Tap Me.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Tap Me.app";
+			remoteRef = 600E47531D0AD028006CAE3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXSourcesBuildPhase section */
 		600E47141D0A2DED006CAE3E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				600E47241D0AC3B9006CAE3E /* Person.m in Sources */,
 				600E471C1D0A2DED006CAE3E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
