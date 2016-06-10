@@ -28,10 +28,10 @@
 -(void)setUpGame{
     
     seconds = 30;
-    count = 0;
+    _count = 0;
     
     timerLabel.text = [NSString stringWithFormat:@"Time: %li",seconds];
-    scoreLabel.text = [NSString stringWithFormat:@"Score \n%li",count];
+    scoreLabel.text = [NSString stringWithFormat:@"Score \n%li",self.count];
     
     //param 1 the time interval
     //target is which instance to send a message to every second. Here, we want the message to go to the View Controller hence the target is self
@@ -52,7 +52,7 @@
         
         //create an alertView
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Time is Up" message:[NSString stringWithFormat: @"You have scored %li points",count] preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Time is Up" message:[NSString stringWithFormat: @"You have scored %li points",self.count] preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *playAgainAction = [UIAlertAction actionWithTitle: @"Play again" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
                 [self setUpGame];
@@ -66,8 +66,8 @@
 }
 
 -(IBAction)buttonPressed{
-    count++;
-    scoreLabel.text = [NSString stringWithFormat:@"Score \n%li",count];
+    self.count++;
+    scoreLabel.text = [NSString stringWithFormat:@"Score \n%li",self.count];
 }
 
 @end
