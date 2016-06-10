@@ -51,19 +51,18 @@
         [timer invalidate];
         
         //create an alertView
-        //TODO: UIAlertView is deprecated; Replace it soon
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Time is up!" message:[NSString stringWithFormat: @"You have scored %li points",count] delegate:self cancelButtonTitle:@"Play again" otherButtonTitles:nil];
         
-        [alertView show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Time is Up" message:[NSString stringWithFormat: @"You have scored %li points",count] preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *playAgainAction = [UIAlertAction actionWithTitle: @"Play again" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+                [self setUpGame];
+            }];
+        
+        [alert addAction:playAgainAction];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }
     
-}
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    //this is a delegate method which will be called when a button in alertView is clicked
-    //Delegates help us to know what is happening in our application
-    //over here, we come to know when the button is clicked
-    [self setUpGame];
 }
 
 -(IBAction)buttonPressed{

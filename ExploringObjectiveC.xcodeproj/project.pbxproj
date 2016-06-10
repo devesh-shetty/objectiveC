@@ -289,6 +289,7 @@
 				600E47211D0A2DED006CAE3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
