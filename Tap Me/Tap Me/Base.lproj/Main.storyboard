@@ -21,7 +21,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Otb-9E-IBm">
-                                <rect key="frame" x="97" y="443" width="126" height="60"/>
+                                <rect key="frame" x="97" y="443" width="126" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -41,6 +41,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.39369581920000002" green="1" blue="0.2175891922" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="Otb-9E-IBm" id="6IY-Nt-mQ6"/>
+                        <outlet property="timerLabel" destination="VmF-7C-aiT" id="yth-Rs-Qhl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
