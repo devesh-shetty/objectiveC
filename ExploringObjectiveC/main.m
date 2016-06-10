@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Person.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -54,6 +55,43 @@ int main(int argc, const char * argv[]) {
         //%li format specifier for NSUInteger
         //NSString also stores a C string, but also provides a host of methods that allow you to do things such as get the string’s length and compare it to other strings.
         NSLog(@"User has entered the word: %@  of length: %li ",userEnteredCharacterString, [userEnteredCharacterString length]);
+        
+        //Using Custom classes
+        //alloc allocates memory for the object
+        //init creates and initializes the object that will live at that memory
+        Person *person = [[Person alloc] init ];
+        
+        [person enterInfo];
+        [person printInfo];
+        
+        NSLog(@"Messages sent to nil pointers won't perform any action");
+        //nil in Objective C is equivalent to null in JAVA or NULL in C
+        person = nil;
+        //messages sent to nil references will be ignored; unlike JAVA it won't throw an exception
+        [person printInfo];
+        
+        //Arrays
+        //NSArray is an immutable array
+        //NSMutableArray is a mutable array
+        NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
+        [mutableArray addObject:@"One"];
+        [mutableArray addObject:@"Two"];
+        
+        NSArray *immutableArray = [[NSArray alloc]initWithArray:mutableArray];
+        NSLog(@"Immutable Array");
+        for(NSString *str in immutableArray){
+            NSLog(@"%@",str);
+        }
+        
+        
+        [mutableArray addObject:@"Three"];
+        NSLog(@"Mutable Array");
+        for(NSString *str in mutableArray){
+            NSLog(@"%@",str);
+        }
+        
+        
+        
         
     }
     return 0;
