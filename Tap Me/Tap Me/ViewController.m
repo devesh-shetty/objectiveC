@@ -14,6 +14,7 @@
 
 @implementation ViewController
 
+#pragma mark - Explanation @property
 //Whenever we use @property, the following things happen
 //1:
 //AUTO-GENERATED: @synthesize count = _count;
@@ -25,6 +26,9 @@
 //-(NSInteger)count{
 //    return _count;
 //}
+
+//NOTE: If we write the setter as well as the getter in the implemention file,
+//then we need to write @synthesize varName = _varName
 
 
 - (void)viewDidLoad {
