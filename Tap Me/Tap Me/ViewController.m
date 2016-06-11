@@ -14,6 +14,19 @@
 
 @implementation ViewController
 
+//Whenever we use @property, the following things happen
+//1:
+//AUTO-GENERATED: @synthesize count = _count;
+//2: A SETTER IS GENERATED
+//-(void)setCount:(NSInteger)value{
+//    _count = value;
+//}
+//3: A GETTER IS GENERATED
+//-(NSInteger)count{
+//    return _count;
+//}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -25,6 +38,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Private Methods
+
+//This is a private method (i.e., a method not declared in the .h file and thus not available to other classes)
+//But it can be overriden by the sub-class
 -(void)setUpGame{
     
     seconds = 30;
