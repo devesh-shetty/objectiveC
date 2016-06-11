@@ -10,6 +10,19 @@
 
 @implementation Person
 
+static NSUInteger count = 0;
+
+-(instancetype)init{
+    self = [super init];
+    count++;
+    return self;
+}
+
++(NSUInteger)count{
+    return count;
+}
+
+
 -(void)enterInfo{
     NSLog(@"Enter FirstName: ");
     char fname[30];

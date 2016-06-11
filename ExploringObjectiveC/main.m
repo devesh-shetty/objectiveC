@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Person.h"
+#import "Student.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -64,11 +65,22 @@ int main(int argc, const char * argv[]) {
         [person enterInfo];
         [person printInfo];
         
+        NSLog(@"Total count of Person Objects: %li",[Person count]);
+        
+        NSLog(@"Person Object: %@",person);
+        
         NSLog(@"Messages sent to nil pointers won't perform any action");
         //nil in Objective C is equivalent to null in JAVA or NULL in C
         person = nil;
         //messages sent to nil references will be ignored; unlike JAVA it won't throw an exception
         [person printInfo];
+        
+        Student *student = [[Student alloc]init];
+        [student enterInfo];
+        
+        //As we have used instancetype as the return type to init method in the Student class,
+        //we will get a student object and not a Person object
+        NSLog(@"Student Object: %@",student);
         
         //Arrays
         //NSArray is an immutable array

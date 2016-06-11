@@ -14,8 +14,11 @@
     NSString *lastName;
     int age;
 }
+
 //just declare these methods
 -(void)enterInfo;
 -(void)printInfo;
+//static/class method
++(NSUInteger)count;
 
 @end
