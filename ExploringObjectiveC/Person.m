@@ -8,6 +8,11 @@
 
 #import "Person.h"
 
+@interface Person()
+-(void)privateMethod;
+
+@end
+
 @implementation Person
 
 static NSUInteger count = 0;
@@ -16,6 +21,10 @@ static NSUInteger count = 0;
     self = [super init];
     count++;
     return self;
+}
+
+-(void)privateMethod{
+    NSLog(@"I'm a private method");
 }
 
 +(NSUInteger)count{

@@ -82,6 +82,9 @@ int main(int argc, const char * argv[]) {
         //we will get a student object and not a Person object
         NSLog(@"Student Object: %@",student);
         
+        Student *studTwo = [[Student alloc]init];
+        NSLog(@"Total student count: %li",[Student count]);
+        
         //Arrays
         //NSArray is an immutable array
         //NSMutableArray is a mutable array
