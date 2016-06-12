@@ -25,4 +25,11 @@
     return self;
 }
 
+//equivalent toString in Java
+//so whenever we try to print a student Object this method is called
+//e.g NSLog(@"%@",studentObject); this leads to calling description on that student object
+-(NSString *)description{
+    return @"I'm a student";
+}
+
 @end

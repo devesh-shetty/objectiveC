@@ -106,6 +106,12 @@ int main(int argc, const char * argv[]) {
         }
         
         
+        //NSNumber
+        //creating and using NSNumber
+        NSNumber *numInt = @3;
+        NSNumber *numBOOl = @YES;
+        float intToFloatValue = [numInt floatValue];
+        NSNumber *numFloat = [NSNumber numberWithFloat:4.5];
         
         
     }

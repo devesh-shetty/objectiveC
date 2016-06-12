@@ -89,6 +89,8 @@
 -(IBAction)buttonPressed{
     self.count++;
     scoreLabel.text = [NSString stringWithFormat:@"Score \n%li",self.count];
+    //the return type is void
+    //IBAction or IBOutlet just help the xcode internally to map methods to views
 }
 
 @end
