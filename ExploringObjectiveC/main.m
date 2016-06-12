@@ -13,6 +13,8 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
+        //@ is used for object creation, in some ways similar to "new" in JAVA
+
         //In Objective-C, strings begin with @ symbol
         NSLog(@"Hello, World!");
         
@@ -112,6 +114,35 @@ int main(int argc, const char * argv[]) {
         NSNumber *numBOOl = @YES;
         float intToFloatValue = [numInt floatValue];
         NSNumber *numFloat = [NSNumber numberWithFloat:4.5];
+        
+        NSDictionary *dict = @{@"name": @"Devesh Shetty",
+                               @"language": @"ObjectiveC",
+                               @"randomNumber": @2132112321
+                               };
+        
+        NSLog(@"%@",dict);
+        
+        //NSUserDefaults is similar to SharedPreferences in Android
+        //NSUserDefaults stores small data across various app launches
+        //Never store huge chunk of data in NSUserDefaults
+        [[NSUserDefaults standardUserDefaults] setValue:@3 forKey:@"Test"];
+        //always remember to write the defaults out after each batch of changes
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        
+        //PropertyList: Every thing in the entire object graph must be a part of the collections: NSArray, NSDictionary, NSString,etc
+        //PropertyList is just a term
+        //TODO: Explore more on Property List
+        
+        //NSRange: It is a C struct (not a class)
+        //typedef struct{
+        //  NSUInteger location;
+        //  NSUInteger length;
+        //}NSRange;
+        NSString *testString = @"I'm a test String";
+        // r has the location and length of string "test"
+        NSRange r = [testString rangeOfString:@"test"];
+        //rNotFound contains a special value NSNotFound
+        NSRange rNotFound = [testString rangeOfString:@"NOWhEer"];
         
         
     }
