@@ -144,6 +144,22 @@ int main(int argc, const char * argv[]) {
         //rNotFound contains a special value NSNotFound
         NSRange rNotFound = [testString rangeOfString:@"NOWhEer"];
         
+        //Exploring blocks in ObjectiveC
+        //Blocks are Objective-C's anonymous functions
+        
+        //Declare the block variable
+        double(^addTwoNumbers)( double no1, double no2 );
+        
+        //Create and assign the block
+        addTwoNumbers = ^double(double no1, double no2){
+            return no1 + no2;
+        };
+        
+        //Call the block
+        double result = addTwoNumbers(45.4, 3);
+        
+        NSLog(@"45.4 + 3 = %f",result);
+        
         
     }
     return 0;
