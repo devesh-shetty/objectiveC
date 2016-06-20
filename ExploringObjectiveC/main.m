@@ -148,7 +148,10 @@ int main(int argc, const char * argv[]) {
         //Blocks are Objective-C's anonymous functions
         
         //Declare the block variable
+        //the ^ is used to mark the addTwoNumbers variable as a block
+        //Like the function declaration, you need to include the return type and parameter types so the compiler can enforce type safety
         double(^addTwoNumbers)( double no1, double no2 );
+        //The ^ behaves in a similar manner to the asterisk before a pointer (e.g., int *aPointer) in that it is only required when declaring the block, after which you can use it like a normal variable
         
         //Create and assign the block
         addTwoNumbers = ^double(double no1, double no2){
@@ -160,6 +163,19 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"45.4 + 3 = %f",result);
         
+        //Paramterless blocks
+        //If the block does not take any arguments, we can omit the argument list
+        //Specifying the return type of a block literal is optional so we can skip mentioning it
+        //Hence, we can just mention the block using ^ {}
+        NSUInteger (^generateRandomNumberBetweenOneAnd20)(void) = ^ {
+            return (NSUInteger)arc4random() % 20;
+        };
+        
+        
+        NSString *car = @"Honda";
+//        NSString *(^getCarName)(NSString *) = ^(NSString *model){
+//        
+//        };
         
     }
     return 0;
