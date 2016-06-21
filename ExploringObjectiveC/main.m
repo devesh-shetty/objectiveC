@@ -171,11 +171,21 @@ int main(int argc, const char * argv[]) {
             return (NSUInteger)arc4random() % 20;
         };
         
+        NSLog(@"Any random number between 1 and 20: %lu",(unsigned long)generateRandomNumberBetweenOneAnd20());
         
+        //Blocks are implemented as closures
         NSString *car = @"Honda";
-//        NSString *(^getCarName)(NSString *) = ^(NSString *model){
-//        
-//        };
+        //Therefore, blocks also have access to non-local variables
+        NSString *(^getCarName)(NSString *) = ^(NSString *model){
+            //This block has access to the variable "car"
+            //Non-local variables (wrt to block) are copied and stored with block as const variables which means they are read-only
+            return [car stringByAppendingFormat:@" %@",model];
+        };
+        
+        NSLog(@"The car is %@", getCarName(@"City"));
+        
+        
+        
         
     }
     return 0;
