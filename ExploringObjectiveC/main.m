@@ -184,7 +184,13 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"The car is %@", getCarName(@"City"));
         
+        //The fact that non-local variables are copied as constants means that a block does not just have access to non-local variables, it creates a snapshot of them
+        //Non-local variables are frozen at whatever value they contain when the block is defined and the block always uses that value even if non-local variable change their value later
         
+        //changed the value
+        car = @"Tesla";
+        //but the block getCarName has the value Honda for variable car
+        NSLog(@"The car is %@", getCarName(@"Roadster"));
         
         
     }
