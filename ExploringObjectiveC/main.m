@@ -192,6 +192,17 @@ int main(int argc, const char * argv[]) {
         //but the block getCarName has the value Honda for variable car
         NSLog(@"The car is %@", getCarName(@"Roadster"));
         
+        //__block will storage modifier will let the block access the non-local variable by reference
+        //hence, we make changes within or outside the block
+        __block NSString *phone = @"Apple";
+        
+        NSString *(^getPhoneName)(NSString *) = ^(NSString *model){
+            phone = @"Samsung";
+            return [phone stringByAppendingFormat:@" %@",model];
+        };
+        
+        NSLog(@"The phone is %@",getPhoneName(@"iPhone"));
+        NSLog(@"The phone value = %@",phone);
         
     }
     return 0;
