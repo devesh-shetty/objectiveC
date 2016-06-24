@@ -203,6 +203,18 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"The phone is %@",getPhoneName(@"iPhone"));
         NSLog(@"The phone value = %@",phone);
+
+        //the __block modifier serves as a "memory" between multiple calls to a block
+        __block int i = 0;
+        //It creates a block that "remembers" the value of i over subsequent invocations
+        int (^count)(void) = ^{
+            i++;
+            return i;
+        };
+        
+        NSLog(@" %d",count());
+        NSLog(@" %d",count());
+        NSLog(@" %d",count());
         
     }
     return 0;
