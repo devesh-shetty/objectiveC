@@ -216,6 +216,11 @@ int main(int argc, const char * argv[]) {
         NSLog(@" %d",count());
         NSLog(@" %d",count());
         
+        //********* Exploring date ***********
+        NSDate *currentDate = [NSDate date];
+        NSLog(@"%@",currentDate);
+        
+        
     }
     return 0;
 }
